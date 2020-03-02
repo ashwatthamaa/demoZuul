@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: demo-zuul
+server:
+  port: 8081
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+zuul:
+  routes:
+    demo-service.path: /employeeV1/**
+    demo-service.serviceId: demo-service
